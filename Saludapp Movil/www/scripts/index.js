@@ -11,6 +11,7 @@
         // Handle the Cordova pause and resume events
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener( 'resume', onResume.bind( this ), false );
+        document.addEventListener("deviceready", initializeControls, false);
         
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         var parentElement = document.getElementById('deviceready');
@@ -27,4 +28,13 @@
     function onResume() {
         // TODO: This application has been reactivated. Restore application state here.
     };
-} )();
+})();
+
+function initializeControls() {
+
+    $("#buttonObtenerNota").click(function() {
+        obtenerNotaIngreso();        
+    });
+
+}
+

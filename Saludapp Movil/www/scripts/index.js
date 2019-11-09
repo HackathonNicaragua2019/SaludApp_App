@@ -39,12 +39,14 @@ function initializeControls() {
 
 function obtenerNotaIngreso() {
 
+    var direccionIP = $("#txtDireccionIP").val();
+    
     $("#tableNotaIngreso").empty();
 
     $.ajax({
 
         type: "POST",
-        url: "http://127.0.0.1/Saludapp/BackendFolder/experimental.php",
+        url: "http://" + direccionIP + "/Saludapp/BackendFolder/experimental.php",
         data: {},
         cache: false,
         success: function (data) {

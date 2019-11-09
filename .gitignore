@@ -264,4 +264,4 @@ __pycache__/
 /platforms
 
 # Optional to ignore plugin Git clones
-/plugins
+plugins

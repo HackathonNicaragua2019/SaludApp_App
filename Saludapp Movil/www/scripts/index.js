@@ -40,8 +40,6 @@ function initializeControls() {
 function obtenerNotaIngreso() {
 
     var direccionIP = $("#txtDireccionIP").val();
-    
-    $("#tableNotaIngreso").empty();
 
     $.ajax({
 

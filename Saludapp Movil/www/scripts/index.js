@@ -35,17 +35,23 @@ function initializeControls() {
     $("#buttonObtenerNota").click(function() {
         obtenerNotaIngreso();        
     });
+
 }
 
 function obtenerNotaIngreso() {
 
     var direccionIP = $("#txtDireccionIP").val();
+    var nombrePaciente = $("#txtNombrePaciente").val();
+
+    $("#containerTableNotaIngreso").empty();
 
     $.ajax({
 
         type: "POST",
-        url: "http://" + direccionIP + "/Saludapp/BackendFolder/experimental.php",
-        data: {},
+        url: "http://" + direccionIP + "/Saludapp/BackendFolder/obtenerNotas.php",
+        data: {
+            nombrePaciente : nombrePaciente
+        },
         cache: false,
         success: function (data) {
             $("#containerTableNotaIngreso").append(data);

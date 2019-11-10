@@ -26,17 +26,25 @@
 </head>
 <body>
 
-    <div id="containerBotonesMenu" data-enhance="false">
+    <div id="containerBotonesMenu" data-role="page" data-enhance="false">
 
         <input type="text" placeholder="Dirección IP" value="127.0.0.1" id="txtDireccionIP" />
 
-        <button id="buttonObtenerNota">Obtener nota</button>
+        <button><a href="#pageObtenerNota"> Obtener nota </a></button>
 
-        <button id="buttonExportarPDF">Exportar a PDF</button>
+        <button><a href="#pageFiltrarNota"> Filtrar nota </a></button>
 
     </div>
 
-    <div id="containerTableNotaIngreso" data-enhance="false">
+    <div id="pageObtenerNota" data-role="page" data-enhance="false">
+
+        <input type="text" placeholder="Nombre del paciente" id="txtNombrePaciente" />
+
+        <button id="buttonObtenerNota"> Buscar </button>
+
+        <div id="containerTableNotaIngreso" data-enhance="false">
+
+        </div>
 
     </div>
 

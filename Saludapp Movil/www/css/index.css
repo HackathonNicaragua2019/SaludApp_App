@@ -53,7 +53,7 @@
 #containerControlesBusqueda {
     display: grid;
     width: 100vw;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 70% 15% 15%;
     position: fixed;
 }
 
@@ -69,7 +69,7 @@ button {
 #containerFiltroBusqueda {
     display: grid;
     width: 100vw;
-    grid-template-columns: 30% 50% 20%;
+    grid-template-columns: 30% 50% 10% 10%;
     position: fixed;
 }
 

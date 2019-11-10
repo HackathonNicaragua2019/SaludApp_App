@@ -35,20 +35,58 @@ function initializeControls() {
     $("#buttonObtenerNota").click(function() {
         obtenerNotaIngreso();        
     });
+
+    $("#buttonFiltrarNota").click(function () {
+        filtrarNotaIngreso();
+    });
+
 }
 
 function obtenerNotaIngreso() {
 
     var direccionIP = $("#txtDireccionIP").val();
+    var nombrePaciente = $("#txtNombrePaciente").val();
+
+    $("#containerTableNotaIngreso").empty();
 
     $.ajax({
 
         type: "POST",
-        url: "http://" + direccionIP + "/Saludapp/BackendFolder/experimental.php",
-        data: {},
+        url: "http://" + direccionIP + "/Saludapp/BackendFolder/obtenerNotas.php",
+        data: {
+            nombrePaciente : nombrePaciente
+        },
         cache: false,
         success: function (data) {
             $("#containerTableNotaIngreso").append(data);
+        },
+        error: function (data) {
+            alert("No hay conexion con la base de datos");
+        }
+
+    });
+
+}
+
+function filtrarNotaIngreso() {
+
+    var direccionIP = $("#txtDireccionIP").val();
+    var caracterBuscar = $("#txtCriterio").val();
+    var criterio = $("#selectCriterio").val();
+
+    $("#containerTableFiltroNotaIngreso").empty();
+
+    $.ajax({
+
+        type: "POST",
+        url: "http://" + direccionIP + "/Saludapp/BackendFolder/filtrarNotas.php",
+        data: {
+            caracterBuscar: caracterBuscar,
+            criterio : criterio
+        },
+        cache: false,
+        success: function (data) {
+            $("#containerTableFiltroNotaIngreso").append(data);
         },
         error: function (data) {
             alert("No hay conexion con la base de datos");

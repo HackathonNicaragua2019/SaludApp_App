@@ -40,6 +40,13 @@ function initializeControls() {
         filtrarNotaIngreso();
     });
 
+    $("#buttonExportPDF1").click(function () {
+        printToPDF1();
+    });
+
+    $("#buttonExportPDF2").click(function () {
+        printToPDF2();
+    });
 }
 
 function obtenerNotaIngreso() {
@@ -93,5 +100,27 @@ function filtrarNotaIngreso() {
         }
 
     });
+
+}
+
+function printToPDF1() {
+    let options = {
+        documentSize: 'Chou2',
+        type: 'share',
+        fileName: 'reporte'
+    }
+
+    pdf.fromData($("#containerTableNotaIngreso").html(), options)
+
+}
+
+function printToPDF2() {
+    let options = {
+        documentSize: 'Chou2',
+        type: 'share',
+        fileName: 'reporte'
+    }
+
+    pdf.fromData($("#containerTableFiltroNotaIngreso").html(), options)
 
 }

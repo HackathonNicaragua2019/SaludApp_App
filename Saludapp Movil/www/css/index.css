@@ -53,12 +53,16 @@
 #containerControlesBusqueda {
     display: grid;
     width: 100vw;
-    grid-template-columns: 70% 15% 15%;
+    grid-template-columns: 80% 10% 10%;
     position: fixed;
 }
 
 #containerControlesBusqueda button {
     background-color: mediumturquoise;
+    outline: none;
+    border-right-style: solid;
+    border-color: black;
+    border-width: 0.1vw;
 }
 
 button {
@@ -75,4 +79,14 @@ button {
 
 #containerFiltroBusqueda button {
     background-color:mediumturquoise;
+    outline: none;
+    border-right-style: solid;
+    border-color: black;
+    border-width: 0.1vw;
+}
+
+.menuIcons {
+    display: block;
+    width: 50%;
+    margin: auto auto auto auto;
 }

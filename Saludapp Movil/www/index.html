@@ -10,16 +10,25 @@
     <link href="css/jqueryMobileUI.min.css" rel="stylesheet" />
 
     <script type="text/javascript" src="scripts/jquery.js"></script>
+
+    <script>
+        $(document).on('mobileinit', function () {
+            $.mobile.ignoreContentEnabled = true;
+        });
+    </script>
+
     <script type="text/javascript" src="scripts/jqueryMobile.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
 
-    <title>SaludappMovil</title>
+    <link href="css/index.css" rel="stylesheet" />
+
+    <title>Saludapp Movil</title>
 </head>
 <body>
 
-    <input type="text" placeholder="Dirección IP" value="127.0.0.1" id="txtDireccionIP"/>
+    <div id="containerBotonesMenu" data-enhance="false">
 
-    <div id="containerBotonesMenu">
+        <input type="text" placeholder="Dirección IP" value="127.0.0.1" id="txtDireccionIP" />
 
         <button id="buttonObtenerNota">Obtener nota</button>
 
@@ -27,9 +36,7 @@
 
     </div>
 
-    <div id="containerTableNotaIngreso">
-
-        <table id="tableNotaIngreso"></table>
+    <div id="containerTableNotaIngreso" data-enhance="false">
 
     </div>
 

@@ -36,6 +36,10 @@ function initializeControls() {
         obtenerNotaIngreso();        
     });
 
+    $("#buttonFiltrarNota").click(function () {
+        filtrarNotaIngreso();
+    });
+
 }
 
 function obtenerNotaIngreso() {
@@ -55,6 +59,34 @@ function obtenerNotaIngreso() {
         cache: false,
         success: function (data) {
             $("#containerTableNotaIngreso").append(data);
+        },
+        error: function (data) {
+            alert("No hay conexion con la base de datos");
+        }
+
+    });
+
+}
+
+function filtrarNotaIngreso() {
+
+    var direccionIP = $("#txtDireccionIP").val();
+    var caracterBuscar = $("#txtCriterio").val();
+    var criterio = $("#selectCriterio").val();
+
+    $("#containerTableFiltroNotaIngreso").empty();
+
+    $.ajax({
+
+        type: "POST",
+        url: "http://" + direccionIP + "/Saludapp/BackendFolder/filtrarNotas.php",
+        data: {
+            caracterBuscar: caracterBuscar,
+            criterio : criterio
+        },
+        cache: false,
+        success: function (data) {
+            $("#containerTableFiltroNotaIngreso").append(data);
         },
         error: function (data) {
             alert("No hay conexion con la base de datos");

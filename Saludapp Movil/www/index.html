@@ -32,7 +32,7 @@
 
         <a href="#pageObtenerNota"> <button> Obtener nota </button></a>
 
-        <a href="#pageFiltrarNota"><button> Filtrar nota </button> </a>
+        <a href="#pageFiltrarNota"><button> Filtrar nota </button></a>
 
     </div>
 
@@ -50,9 +50,19 @@
 
     <div id="pageFiltrarNota" data-role="page" data-enhance="false">
 
-        <button id="buttonObtenerNota"> Buscar </button>
+        <select id="selectCriterio">
+            <option> Doctor </option>
+            <option> Sexo </option>
+            <option> Fecha </option>
+            <option> Estado Civil </option>
+            <option> Departamento </option>
+        </select>
 
-        <div id="containerTableFiltraNotaIngreso" data-enhance="false">
+        <input type="text" placeholder="Caracteres a buscar" id="txtCriterio" />
+
+        <button id="buttonFiltrarNota"> Buscar </button>
+
+        <div id="containerTableFiltroNotaIngreso" data-enhance="false">
 
         </div>
 
